@@ -1,9 +1,9 @@
-package com.example.repository;
+package com.example.demo.repository;
 
-import com.example.models.ComputerNetworkProject;
-import org.springframework.data.jpa.repository.JpaRepository;
+import com.example.demo.models.ComputerNetworkProject;
+import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ComputerNetworkProjectRepository extends JpaRepository<ComputerNetworkProject, Integer> {
+public interface ComputerNetworkProjectRepository extends MongoRepository<ComputerNetworkProject, String> {
 }

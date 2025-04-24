@@ -1,8 +1,8 @@
-package com.example.service.impl;
+package com.example.demo.service.impl;
 
-import com.example.models.Condition;
-import com.example.repository.ConditionRepository;
-import com.example.service.ConditionService;
+import com.example.demo.models.Condition;
+import com.example.demo.repository.ConditionRepository;
+import com.example.demo.service.ConditionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -20,7 +20,7 @@ public class ConditionServiceImpl implements ConditionService {
     }
 
     @Override
-    public Condition getConditionById(int id) {
+    public Condition getConditionById(String id) { // Chuyển từ int sang String
         Optional<Condition> condition = repository.findById(id);
         return condition.orElse(null);
     }
@@ -31,7 +31,7 @@ public class ConditionServiceImpl implements ConditionService {
     }
 
     @Override
-    public void deleteCondition(int id) {
+    public void deleteCondition(String id) { // Chuyển từ int sang String
         repository.deleteById(id);
     }
 }

@@ -1,8 +1,8 @@
-package com.example.service.impl;
+package com.example.demo.service.impl;
 
-import com.example.models.TuitionStatus;
-import com.example.repository.TuitionStatusRepository;
-import com.example.service.TuitionStatusService;
+import com.example.demo.models.TuitionStatus;
+import com.example.demo.repository.TuitionStatusRepository;
+import com.example.demo.service.TuitionStatusService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -20,7 +20,7 @@ public class TuitionStatusServiceImpl implements TuitionStatusService {
     }
 
     @Override
-    public TuitionStatus getTuitionStatusById(int id) {
+    public TuitionStatus getTuitionStatusById(String id) { // Chuyển từ int sang String
         Optional<TuitionStatus> status = repository.findById(id);
         return status.orElse(null);
     }
@@ -31,7 +31,7 @@ public class TuitionStatusServiceImpl implements TuitionStatusService {
     }
 
     @Override
-    public void deleteTuitionStatus(int id) {
+    public void deleteTuitionStatus(String id) { // Chuyển từ int sang String
         repository.deleteById(id);
     }
 }

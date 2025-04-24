@@ -1,9 +1,9 @@
-package com.example.repository;
+package com.example.demo.repository;
 
-import com.example.models.UserAccount;
-import org.springframework.data.jpa.repository.JpaRepository;
+import com.example.demo.models.UserAccount;
+import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserAccountRepository extends JpaRepository<UserAccount, Integer> {
+public interface UserAccountRepository extends MongoRepository<UserAccount, String> {
 }

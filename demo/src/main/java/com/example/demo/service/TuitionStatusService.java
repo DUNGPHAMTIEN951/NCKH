@@ -1,11 +1,11 @@
-package com.example.service;
+package com.example.demo.service;
 
-import com.example.models.TuitionStatus;
 import java.util.List;
+import com.example.demo.models.TuitionStatus;
 
 public interface TuitionStatusService {
     List<TuitionStatus> getAllTuitionStatuses();
-    TuitionStatus getTuitionStatusById(int id);
+    TuitionStatus getTuitionStatusById(String id); // Chuyển từ int sang String
     TuitionStatus saveTuitionStatus(TuitionStatus status);
-    void deleteTuitionStatus(int id);
+    void deleteTuitionStatus(String id); // Chuyển từ int sang String
 }

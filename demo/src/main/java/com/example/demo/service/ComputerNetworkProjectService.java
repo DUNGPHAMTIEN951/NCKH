@@ -1,11 +1,11 @@
-package com.example.service;
+package com.example.demo.service;
 
-import com.example.models.ComputerNetworkProject;
 import java.util.List;
+import com.example.demo.models.ComputerNetworkProject;
 
 public interface ComputerNetworkProjectService {
     List<ComputerNetworkProject> getAllProjects();
-    ComputerNetworkProject getProjectById(int id);
+    ComputerNetworkProject getProjectById(String id); // Chuyển từ int sang String
     ComputerNetworkProject saveProject(ComputerNetworkProject project);
-    void deleteProject(int id);
+    void deleteProject(String id); // Chuyển từ int sang String
 }

@@ -1,11 +1,11 @@
-package com.example.service;
+package com.example.demo.service;
 
-import com.example.models.ProjectStatus;
 import java.util.List;
+import com.example.demo.models.ProjectStatus;
 
 public interface ProjectStatusService {
     List<ProjectStatus> getAllStatuses();
-    ProjectStatus getStatusById(int id);
+    ProjectStatus getStatusById(String id); // Chuyển từ int sang String
     ProjectStatus saveStatus(ProjectStatus status);
-    void deleteStatus(int id);
+    void deleteStatus(String id); // Chuyển từ int sang String
 }

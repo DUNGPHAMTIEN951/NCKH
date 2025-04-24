@@ -1,11 +1,11 @@
-package com.example.service;
+package com.example.demo.service;
 
-import com.example.models.Condition;
+import com.example.demo.models.Condition;
 import java.util.List;
 
 public interface ConditionService {
     List<Condition> getAllConditions();
-    Condition getConditionById(int id);
+    Condition getConditionById(String id); // Chuyển từ int sang String
     Condition saveCondition(Condition condition);
-    void deleteCondition(int id);
+    void deleteCondition(String id); // Chuyển từ int sang String
 }

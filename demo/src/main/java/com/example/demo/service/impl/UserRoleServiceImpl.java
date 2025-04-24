@@ -1,8 +1,8 @@
-package com.example.service.impl;
+package com.example.demo.service.impl;
 
-import com.example.models.UserRole;
-import com.example.repository.UserRoleRepository;
-import com.example.service.UserRoleService;
+import com.example.demo.models.UserRole;
+import com.example.demo.repository.UserRoleRepository;
+import com.example.demo.service.UserRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -20,7 +20,7 @@ public class UserRoleServiceImpl implements UserRoleService {
     }
 
     @Override
-    public UserRole getRoleById(int id) {
+    public UserRole getRoleById(String id) { // Chuyển từ int sang String
         Optional<UserRole> role = repository.findById(id);
         return role.orElse(null);
     }
@@ -31,7 +31,7 @@ public class UserRoleServiceImpl implements UserRoleService {
     }
 
     @Override
-    public void deleteRole(int id) {
+    public void deleteRole(String id) { // Chuyển từ int sang String
         repository.deleteById(id);
     }
 }

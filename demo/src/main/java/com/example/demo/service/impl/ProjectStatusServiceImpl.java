@@ -1,8 +1,8 @@
-package com.example.service.impl;
+package com.example.demo.service.impl;
 
-import com.example.models.ProjectStatus;
-import com.example.repository.ProjectStatusRepository;
-import com.example.service.ProjectStatusService;
+import com.example.demo.models.ProjectStatus;
+import com.example.demo.repository.ProjectStatusRepository;
+import com.example.demo.service.ProjectStatusService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -20,7 +20,7 @@ public class ProjectStatusServiceImpl implements ProjectStatusService {
     }
 
     @Override
-    public ProjectStatus getStatusById(int id) {
+    public ProjectStatus getStatusById(String id) { // Chuyển từ int sang String
         Optional<ProjectStatus> status = repository.findById(id);
         return status.orElse(null);
     }
@@ -31,7 +31,7 @@ public class ProjectStatusServiceImpl implements ProjectStatusService {
     }
 
     @Override
-    public void deleteStatus(int id) {
+    public void deleteStatus(String id) { // Chuyển từ int sang String
         repository.deleteById(id);
     }
 }

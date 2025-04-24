@@ -1,8 +1,8 @@
-package com.example.service.impl;
+package com.example.demo.service.impl;
 
-import com.example.models.ProjectRoadmap;
-import com.example.repository.ProjectRoadmapRepository;
-import com.example.service.ProjectRoadmapService;
+import com.example.demo.models.ProjectRoadmap;
+import com.example.demo.repository.ProjectRoadmapRepository;
+import com.example.demo.service.ProjectRoadmapService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -20,7 +20,7 @@ public class ProjectRoadmapServiceImpl implements ProjectRoadmapService {
     }
 
     @Override
-    public ProjectRoadmap getRoadmapById(int id) {
+    public ProjectRoadmap getRoadmapById(String id) { // Chuyển từ int sang String
         Optional<ProjectRoadmap> roadmap = repository.findById(id);
         return roadmap.orElse(null);
     }
@@ -31,7 +31,7 @@ public class ProjectRoadmapServiceImpl implements ProjectRoadmapService {
     }
 
     @Override
-    public void deleteRoadmap(int id) {
+    public void deleteRoadmap(String id) { // Chuyển từ int sang String
         repository.deleteById(id);
     }
 }

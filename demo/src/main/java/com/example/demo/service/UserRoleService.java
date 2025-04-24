@@ -1,11 +1,11 @@
-package com.example.service;
+package com.example.demo.service;
 
-import com.example.models.UserRole;
 import java.util.List;
+import com.example.demo.models.UserRole;
 
 public interface UserRoleService {
     List<UserRole> getAllRoles();
-    UserRole getRoleById(int id);
+    UserRole getRoleById(String id); // Chuyển từ int sang String
     UserRole saveRole(UserRole role);
-    void deleteRole(int id);
+    void deleteRole(String id); // Chuyển từ int sang String
 }

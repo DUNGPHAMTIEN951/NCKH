@@ -1,11 +1,11 @@
-package com.example.service;
+package com.example.demo.service;
 
-import com.example.models.ProjectRoadmap;
 import java.util.List;
+import com.example.demo.models.ProjectRoadmap;
 
 public interface ProjectRoadmapService {
     List<ProjectRoadmap> getAllRoadmaps();
-    ProjectRoadmap getRoadmapById(int id);
+    ProjectRoadmap getRoadmapById(String id); // Chuyển từ int sang String
     ProjectRoadmap saveRoadmap(ProjectRoadmap roadmap);
-    void deleteRoadmap(int id);
+    void deleteRoadmap(String id); // Chuyển từ int sang String
 }

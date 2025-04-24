@@ -1,11 +1,11 @@
-package com.example.service;
+package com.example.demo.service;
 
-import com.example.models.UserAccount;
 import java.util.List;
+import com.example.demo.models.UserAccount;
 
 public interface UserAccountService {
     List<UserAccount> getAllUsers();
-    UserAccount getUserById(int id);
+    UserAccount getUserById(String id); // Chuyển từ int sang String
     UserAccount saveUser(UserAccount user);
-    void deleteUser(int id);
+    void deleteUser(String id); // Chuyển từ int sang String
 }
