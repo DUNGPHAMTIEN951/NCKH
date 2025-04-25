@@ -1,23 +1,22 @@
 package com.example.demo.models;
 
+import java.util.Date;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import java.util.Date;
 
 @Document(collection = "user_role") // Định danh MongoDB Collection
 public class UserRole {
 
     @Id
-    private String id; // MongoDB dùng String ID thay vì int
+    private String id; // Khóa chính
 
-    private int roleNumber;
-    private String roleName;
-    private Date createdAt;
-    private Date updatedAt;
-    private String createdBy;
+    private int roleNumber;   // Số vai trò của người dùng
+    private String roleName;  // Tên vai trò của người dùng
+    private Date createdAt;   // Thời gian khởi tạo vai trò người dùng
+    private Date updatedAt;   // Thời gian cập nhật vai trò người dùng
+    private String createdBy; // Người khởi tạo vai trò người dùng
 
     // Getters & Setters
-
     public String getId() {
         return id;
     }

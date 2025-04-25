@@ -1,7 +1,6 @@
 package com.example.demo.models;
 
 import java.util.Date;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -9,26 +8,25 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class UserAccount {
 
     @Id
-    private String id; // MongoDB dùng String ID thay vì int
+    private String id; // Khóa chính
 
-    private String studentId;
-    private String fullName;
-    private String userRoleId; // Lưu ID của UserRole thay vì dùng @ManyToOne
-    private String faculty;
-    private String className;
-    private String profileImage;
-    private String email;
-    private String phoneNumber;
-    private Date dateOfBirth;
-    private String gender;
-    private String username;
-    private String password;
-    private Date createdAt;
-    private Date updatedAt;
-    private String createdBy;
+    private String studentId;    // Mã số sinh viên của người dùng
+    private String fullName;     // Họ và tên đầy đủ của người dùng
+    private String userRoleId;   // Vai trò của người dùng liên kết với tài khoản
+    private String faculty;      // Khoa của người dùng
+    private String className;    // Lớp của người dùng
+    private String profileImage; // Hình ảnh đại diện của người dùng
+    private String email;        // Địa chỉ email của người dùng
+    private String phoneNumber;  // Số điện thoại của người dùng
+    private Date dateOfBirth;    // Ngày tháng năm sinh của người dùng
+    private String gender;       // Giới tính của người dùng
+    private String username;     // Tên đăng nhập của người dùng
+    private String password;     // Mật khẩu của người dùng
+    private Date createdAt;      // Thời gian khởi tạo tài khoản
+    private Date updatedAt;      // Thời gian cập nhật tài khoản
+    private String createdBy;    // Người khởi tạo tài khoản
 
     // Getters & Setters
-
     public String getId() {
         return id;
     }

@@ -1,7 +1,6 @@
 package com.example.demo.models;
 
 import java.util.Date;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -9,16 +8,15 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class ProjectRoadmap {
 
     @Id
-    private String id; // MongoDB dùng String ID thay vì int
+    private String id; // Khóa chính
 
-    private String conditionId; // Lưu ID của điều kiện thay vì dùng @ManyToOne
-    private Date estimatedCompletionTime;
-    private Date createdAt;
-    private Date updatedAt;
-    private String createdBy;
+    private String conditionId;  // Điều kiện liên quan đến lộ trình thực hiện dự án
+    private Date estimatedCompletionTime; // Thời gian hoàn thành dự án dự kiến
+    private Date createdAt;      // Thời gian khởi tạo lộ trình
+    private Date updatedAt;      // Thời gian cập nhật lộ trình
+    private String createdBy;    // Người khởi tạo lộ trình
 
     // Getters & Setters
-
     public String getId() {
         return id;
     }

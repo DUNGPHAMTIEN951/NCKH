@@ -20,7 +20,7 @@ public class UserAccountServiceImpl implements UserAccountService {
     }
 
     @Override
-    public UserAccount getUserById(String id) { // Chuyển từ int sang String
+    public UserAccount getUserById(String id) {
         Optional<UserAccount> user = repository.findById(id);
         return user.orElse(null);
     }
@@ -31,7 +31,30 @@ public class UserAccountServiceImpl implements UserAccountService {
     }
 
     @Override
-    public void deleteUser(String id) { // Chuyển từ int sang String
+    public UserAccount updateUser(String id, UserAccount updatedUser) {
+        Optional<UserAccount> existingUser = repository.findById(id);
+        if (existingUser.isPresent()) {
+            UserAccount user = existingUser.get();
+            user.setFullName(updatedUser.getFullName()); // Sửa từ setName thành setFullName
+            user.setEmail(updatedUser.getEmail());
+            user.setUserRoleId(updatedUser.getUserRoleId()); // Sửa từ setRole thành setUserRoleId
+            user.setFaculty(updatedUser.getFaculty());
+            user.setClassName(updatedUser.getClassName());
+            user.setProfileImage(updatedUser.getProfileImage());
+            user.setPhoneNumber(updatedUser.getPhoneNumber());
+            user.setDateOfBirth(updatedUser.getDateOfBirth());
+            user.setGender(updatedUser.getGender());
+            user.setUsername(updatedUser.getUsername());
+            user.setPassword(updatedUser.getPassword());
+            user.setUpdatedAt(updatedUser.getUpdatedAt());
+            user.setCreatedBy(updatedUser.getCreatedBy());
+            return repository.save(user);
+        }
+        return null;
+    }
+
+    @Override
+    public void deleteUser(String id) {
         repository.deleteById(id);
     }
 }

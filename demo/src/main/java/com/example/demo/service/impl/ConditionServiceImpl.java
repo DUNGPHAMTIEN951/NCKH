@@ -20,7 +20,7 @@ public class ConditionServiceImpl implements ConditionService {
     }
 
     @Override
-    public Condition getConditionById(String id) { // Chuyển từ int sang String
+    public Condition getConditionById(String id) {
         Optional<Condition> condition = repository.findById(id);
         return condition.orElse(null);
     }
@@ -31,7 +31,21 @@ public class ConditionServiceImpl implements ConditionService {
     }
 
     @Override
-    public void deleteCondition(String id) { // Chuyển từ int sang String
+    public Condition updateCondition(String id, Condition updatedCondition) {
+        Optional<Condition> existingCondition = repository.findById(id);
+        if (existingCondition.isPresent()) {
+            Condition condition = existingCondition.get();
+            condition.setConditionName(updatedCondition.getConditionName()); 
+            condition.setCompletionTime(updatedCondition.getCompletionTime()); // Cập nhật thời gian hoàn thành
+            condition.setUpdatedAt(updatedCondition.getUpdatedAt()); // Cập nhật thời gian sửa đổi
+            condition.setCreatedBy(updatedCondition.getCreatedBy()); // Cập nhật người sửa đổi nếu cần
+            return repository.save(condition);
+        }
+        return null;
+    }
+
+    @Override
+    public void deleteCondition(String id) {
         repository.deleteById(id);
     }
 }

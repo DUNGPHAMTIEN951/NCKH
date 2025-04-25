@@ -20,7 +20,7 @@ public class ProjectStatusServiceImpl implements ProjectStatusService {
     }
 
     @Override
-    public ProjectStatus getStatusById(String id) { // Chuyển từ int sang String
+    public ProjectStatus getStatusById(String id) {
         Optional<ProjectStatus> status = repository.findById(id);
         return status.orElse(null);
     }
@@ -31,7 +31,21 @@ public class ProjectStatusServiceImpl implements ProjectStatusService {
     }
 
     @Override
-    public void deleteStatus(String id) { // Chuyển từ int sang String
+    public ProjectStatus updateStatus(String id, ProjectStatus updatedStatus) {
+        Optional<ProjectStatus> existingStatus = repository.findById(id);
+        if (existingStatus.isPresent()) {
+            ProjectStatus status = existingStatus.get();
+            status.setStatusNumber(updatedStatus.getStatusNumber());
+            status.setStatusName(updatedStatus.getStatusName());
+            status.setUpdatedAt(updatedStatus.getUpdatedAt());
+            status.setCreatedBy(updatedStatus.getCreatedBy());
+            return repository.save(status);
+        }
+        return null;
+    }
+
+    @Override
+    public void deleteStatus(String id) {
         repository.deleteById(id);
     }
 }

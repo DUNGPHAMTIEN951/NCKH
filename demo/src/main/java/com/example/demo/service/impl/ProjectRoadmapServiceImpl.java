@@ -20,7 +20,7 @@ public class ProjectRoadmapServiceImpl implements ProjectRoadmapService {
     }
 
     @Override
-    public ProjectRoadmap getRoadmapById(String id) { // Chuyển từ int sang String
+    public ProjectRoadmap getRoadmapById(String id) {
         Optional<ProjectRoadmap> roadmap = repository.findById(id);
         return roadmap.orElse(null);
     }
@@ -31,7 +31,21 @@ public class ProjectRoadmapServiceImpl implements ProjectRoadmapService {
     }
 
     @Override
-    public void deleteRoadmap(String id) { // Chuyển từ int sang String
+    public ProjectRoadmap updateRoadmap(String id, ProjectRoadmap updatedRoadmap) {
+        Optional<ProjectRoadmap> existingRoadmap = repository.findById(id);
+        if (existingRoadmap.isPresent()) {
+            ProjectRoadmap roadmap = existingRoadmap.get();
+            roadmap.setConditionId(updatedRoadmap.getConditionId());
+            roadmap.setEstimatedCompletionTime(updatedRoadmap.getEstimatedCompletionTime());
+            roadmap.setUpdatedAt(updatedRoadmap.getUpdatedAt());
+            roadmap.setCreatedBy(updatedRoadmap.getCreatedBy());
+            return repository.save(roadmap);
+        }
+        return null;
+    }
+
+    @Override
+    public void deleteRoadmap(String id) {
         repository.deleteById(id);
     }
 }

@@ -1,7 +1,6 @@
 package com.example.demo.models;
 
 import java.util.Date;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -9,49 +8,55 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class ComputerNetworkProject {
 
     @Id
-    private String id; // MongoDB dùng String ID thay vì int
+    private String id; // Khóa chính
 
-    private String MSDA;
-    private String userAccountId; // Lưu ID thay vì dùng @ManyToOne
-    private String projectStatusId;
-    private String tuitionStatusId;
-
-    private Date createdAt;
-    private Date updatedAt;
-    private String createdBy;
+    private String projectCode;  // Mã dự án mạng máy tính
+    private String accountId;    // Tài khoản người dùng liên kết với dự án
+    private String projectStatus; // Tình trạng hiện tại của dự án mạng máy tính
+    private String tuitionStatus; // Tình trạng học phí liên quan đến dự án mạng máy tính
+    private Date createdAt;      // Thời gian khởi tạo dự án
+    private Date updatedAt;      // Thời gian cập nhật thông tin dự án
+    private String createdBy;    // Người khởi tạo dự án
 
     // Getters & Setters
-
     public String getId() {
         return id;
     }
 
-    public String getMSDA() {
-        return MSDA;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getUserAccountId() {
-        return userAccountId;
+    public String getProjectCode() {
+        return projectCode;
     }
 
-    public void setUserAccountId(String userAccountId) {
-        this.userAccountId = userAccountId;
+    public void setProjectCode(String projectCode) {
+        this.projectCode = projectCode;
     }
 
-    public String getProjectStatusId() {
-        return projectStatusId;
+    public String getAccountId() {
+        return accountId;
     }
 
-    public void setProjectStatusId(String projectStatusId) {
-        this.projectStatusId = projectStatusId;
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
     }
 
-    public String getTuitionStatusId() {
-        return tuitionStatusId;
+    public String getProjectStatus() {
+        return projectStatus;
     }
 
-    public void setTuitionStatusId(String tuitionStatusId) {
-        this.tuitionStatusId = tuitionStatusId;
+    public void setProjectStatus(String projectStatus) {
+        this.projectStatus = projectStatus;
+    }
+
+    public String getTuitionStatus() {
+        return tuitionStatus;
+    }
+
+    public void setTuitionStatus(String tuitionStatus) {
+        this.tuitionStatus = tuitionStatus;
     }
 
     public Date getCreatedAt() {

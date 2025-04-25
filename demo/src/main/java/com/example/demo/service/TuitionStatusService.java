@@ -5,7 +5,8 @@ import com.example.demo.models.TuitionStatus;
 
 public interface TuitionStatusService {
     List<TuitionStatus> getAllTuitionStatuses();
-    TuitionStatus getTuitionStatusById(String id); // Chuyển từ int sang String
+    TuitionStatus getTuitionStatusById(String id);
     TuitionStatus saveTuitionStatus(TuitionStatus status);
-    void deleteTuitionStatus(String id); // Chuyển từ int sang String
+    TuitionStatus updateTuitionStatus(String id, TuitionStatus status); 
+    void deleteTuitionStatus(String id);
 }

@@ -5,7 +5,8 @@ import com.example.demo.models.ProjectRoadmap;
 
 public interface ProjectRoadmapService {
     List<ProjectRoadmap> getAllRoadmaps();
-    ProjectRoadmap getRoadmapById(String id); // Chuyển từ int sang String
+    ProjectRoadmap getRoadmapById(String id);
     ProjectRoadmap saveRoadmap(ProjectRoadmap roadmap);
-    void deleteRoadmap(String id); // Chuyển từ int sang String
+    ProjectRoadmap updateRoadmap(String id, ProjectRoadmap roadmap); // Bổ sung phương thức update
+    void deleteRoadmap(String id);
 }

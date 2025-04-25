@@ -1,7 +1,6 @@
 package com.example.demo.models;
 
 import java.util.Date;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -9,16 +8,15 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class ProjectStatus {
 
     @Id
-    private String id; // MongoDB dùng String ID thay vì int
-    
-    private int statusNumber;
-    private String statusName;
-    private Date createdAt;
-    private Date updatedAt;
-    private String createdBy;
+    private String id; // Khóa chính
+
+    private int statusNumber;   // Số tình trạng của dự án
+    private String statusName;  // Tên tình trạng của dự án
+    private Date createdAt;     // Thời gian khởi tạo tình trạng dự án
+    private Date updatedAt;     // Thời gian cập nhật tình trạng dự án
+    private String createdBy;   // Người khởi tạo tình trạng dự án
 
     // Getters & Setters
-
     public String getId() {
         return id;
     }

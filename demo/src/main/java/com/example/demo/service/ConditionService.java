@@ -5,7 +5,8 @@ import java.util.List;
 
 public interface ConditionService {
     List<Condition> getAllConditions();
-    Condition getConditionById(String id); // Chuyển từ int sang String
+    Condition getConditionById(String id);
     Condition saveCondition(Condition condition);
-    void deleteCondition(String id); // Chuyển từ int sang String
+    Condition updateCondition(String id, Condition condition); // Bổ sung phương thức update
+    void deleteCondition(String id);
 }

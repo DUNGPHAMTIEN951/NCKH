@@ -5,7 +5,8 @@ import com.example.demo.models.UserRole;
 
 public interface UserRoleService {
     List<UserRole> getAllRoles();
-    UserRole getRoleById(String id); // Chuyển từ int sang String
+    UserRole getRoleById(String id);
     UserRole saveRole(UserRole role);
-    void deleteRole(String id); // Chuyển từ int sang String
+    UserRole updateRole(String id, UserRole role); 
+    void deleteRole(String id);
 }

@@ -1,7 +1,6 @@
 package com.example.demo.models;
 
 import java.util.Date;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -9,16 +8,15 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Condition {
 
     @Id
-    private String id; // MongoDB dùng String ID thay vì int
+    private String id; // Khóa chính
 
-    private String conditionName;
-    private Date completionTime;
-    private Date createdAt;
-    private Date updatedAt;
-    private String createdBy;
+    private String conditionName; // Tên điều kiện
+    private Date completionTime;  // Thời gian hoàn thành điều kiện
+    private Date createdAt;       // Thời gian khởi tạo điều kiện
+    private Date updatedAt;       // Thời gian cập nhật điều kiện
+    private String createdBy;     // Người khởi tạo điều kiện
 
     // Getters & Setters
-
     public String getId() {
         return id;
     }

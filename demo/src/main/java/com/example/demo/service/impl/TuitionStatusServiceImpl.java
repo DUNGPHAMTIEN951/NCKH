@@ -20,7 +20,7 @@ public class TuitionStatusServiceImpl implements TuitionStatusService {
     }
 
     @Override
-    public TuitionStatus getTuitionStatusById(String id) { // Chuyển từ int sang String
+    public TuitionStatus getTuitionStatusById(String id) {
         Optional<TuitionStatus> status = repository.findById(id);
         return status.orElse(null);
     }
@@ -31,7 +31,21 @@ public class TuitionStatusServiceImpl implements TuitionStatusService {
     }
 
     @Override
-    public void deleteTuitionStatus(String id) { // Chuyển từ int sang String
+    public TuitionStatus updateTuitionStatus(String id, TuitionStatus updatedStatus) {
+        Optional<TuitionStatus> existingStatus = repository.findById(id);
+        if (existingStatus.isPresent()) {
+            TuitionStatus status = existingStatus.get();
+            status.setStatusNumber(updatedStatus.getStatusNumber());
+            status.setStatusName(updatedStatus.getStatusName());
+            status.setUpdatedAt(updatedStatus.getUpdatedAt());
+            status.setCreatedBy(updatedStatus.getCreatedBy());
+            return repository.save(status);
+        }
+        return null;
+    }
+
+    @Override
+    public void deleteTuitionStatus(String id) {
         repository.deleteById(id);
     }
 }

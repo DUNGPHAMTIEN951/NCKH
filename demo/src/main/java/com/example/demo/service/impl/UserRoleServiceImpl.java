@@ -20,7 +20,7 @@ public class UserRoleServiceImpl implements UserRoleService {
     }
 
     @Override
-    public UserRole getRoleById(String id) { // Chuyển từ int sang String
+    public UserRole getRoleById(String id) {
         Optional<UserRole> role = repository.findById(id);
         return role.orElse(null);
     }
@@ -31,7 +31,21 @@ public class UserRoleServiceImpl implements UserRoleService {
     }
 
     @Override
-    public void deleteRole(String id) { // Chuyển từ int sang String
+    public UserRole updateRole(String id, UserRole updatedRole) {
+        Optional<UserRole> existingRole = repository.findById(id);
+        if (existingRole.isPresent()) {
+            UserRole role = existingRole.get();
+            role.setRoleNumber(updatedRole.getRoleNumber());
+            role.setRoleName(updatedRole.getRoleName());
+            role.setUpdatedAt(updatedRole.getUpdatedAt());
+            role.setCreatedBy(updatedRole.getCreatedBy());
+            return repository.save(role);
+        }
+        return null;
+    }
+
+    @Override
+    public void deleteRole(String id) {
         repository.deleteById(id);
     }
 }
