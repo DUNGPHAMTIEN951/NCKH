@@ -406,11 +406,11 @@
 <ul>
 <li><a href="purchaseorderreport.html">Purchase order report</a></li>
 <li><a href="inventoryreport.html">Inventory Report</a></li>
-<li><a href="salesreport.html" class="active">Sales Report</a></li>
+<li><a href="salesreport.html">Sales Report</a></li>
 <li><a href="invoicereport.html">Invoice Report</a></li>
-<li><a href="purchasereport.html">Purchase Report</a></li>
+<li><a href="purchasereport.html" class="active">Purchase Report</a></li>
 <li><a href="supplierreport.html">Supplier Report</a></li>
- <li><a href="customerreport.html">Customer Report</a></li>
+<li><a href="customerreport.html">Customer Report</a></li>
 </ul>
 </li>
 <li class="submenu">
@@ -440,8 +440,8 @@
 <div class="content">
 <div class="page-header">
 <div class="page-title">
-<h4>Sales Report</h4>
-<h6>Manage your Sales Report</h6>
+<h4>Purchase Report</h4>
+<h6>Manage your Purchase Report</h6>
 </div>
 </div>
 
@@ -497,11 +497,19 @@
 </div>
 </div>
 </div>
+<div class="col-lg-2 col-sm-6 col-12">
+<div class="form-group">
+<select class="select">
+<option>Choose Suppliers</option>
+<option>Suppliers</option>
+</select>
+</div>
+</div>
 <div class="col-lg-1 col-sm-6 col-12 ms-auto">
 <div class="form-group">
 <a class="btn btn-filters ms-auto"><img src="assets/img/icons/search-whites.svg" alt="img"></a>
 </div>
-</div>
+ </div>
 </div>
 </div>
 </div>
@@ -517,11 +525,8 @@
 </label>
 </th>
 <th>Product Name</th>
-<th>SKU</th>
-<th> Category</th>
-<th>Brand</th>
-<th>Sold amount</th>
-<th>Sold qty</th>
+<th>Purchased amount</th>
+<th>Purchased QTY</th>
 <th>Instock qty</th>
 </tr>
 </thead>
@@ -539,11 +544,8 @@
 </a>
 <a href="javascript:void(0);">Macbook pro</a>
 </td>
-<td>PT001</td>
-<td>Computer</td>
-<td>N/D</td>
-<td>1500.00</td>
-<td>1</td>
+<td>38698.00</td>
+<td>1248</td>
 <td>1356</td>
 </tr>
 <tr>
@@ -559,11 +561,8 @@
 </a>
 <a href="javascript:void(0);">Orange</a>
 </td>
-<td>PT002</td>
-<td>Fruits</td>
-<td>N/D</td>
-<td>10.00</td>
-<td>1</td>
+<td>36080.00</td>
+<td>110</td>
 <td>131</td>
 </tr>
 <tr>
@@ -579,12 +578,9 @@
 </a>
 <a href="javascript:void(0);">Pineapple</a>
 </td>
-<td>PT003</td>
-<td>Fruits</td>
-<td>N/D</td>
-<td>10.00</td>
-<td>3</td>
-<td>72</td>
+<td>21000.00</td>
+<td>106</td>
+<td>131</td>
 </tr>
 <tr>
 <td>
@@ -599,11 +595,8 @@
 </a>
 <a href="javascript:void(0);">Strawberry</a>
 </td>
-<td>PT004</td>
-<td>Fruits</td>
-<td>N/D</td>
-<td>10.00</td>
-<td>1</td>
+<td>11000.00</td>
+<td>105</td>
 <td>100</td>
 </tr>
 <tr>
@@ -619,11 +612,8 @@
 </a>
 <a href="javascript:void(0);">Sunglasses</a>
 </td>
-<td>PT005</td>
-<td>Accessories</td>
-<td>N/D</td>
-<td>10.00</td>
-<td>1</td>
+<td>10600.00</td>
+<td>105</td>
 <td>100</td>
 </tr>
 <tr>
@@ -639,11 +629,8 @@
 </a>
 <a href="javascript:void(0);">Unpaired gray</a>
 </td>
-<td>PT006</td>
-<td>Shoes</td>
-<td>Adidas</td>
- <td>100.00</td>
-<td>3</td>
+<td>9984.00</td>
+<td>50</td>
 <td>50</td>
 </tr>
 <tr>
@@ -651,7 +638,7 @@
 <label class="checkboxs">
 <input type="checkbox">
 <span class="checkmarks"></span>
-</label>
+ </label>
 </td>
 <td class="productimgname">
 <a class="product-img">
@@ -659,11 +646,8 @@
 </a>
 <a href="javascript:void(0);">Avocat</a>
 </td>
-<td>PT007</td>
-<td>Fruits</td>
-<td>N/D</td>
-<td>5.00</td>
-<td>5</td>
+<td>4500.00	</td>
+<td>41</td>
 <td>29</td>
 </tr>
 <tr>
@@ -679,11 +663,8 @@
 </a>
 <a href="javascript:void(0);">Banana</a>
 </td>
-<td>PT008</td>
-<td>Fruits</td>
-<td>N/D</td>
-<td>10.00</td>
-<td>1</td>
+<td>900.00	</td>
+<td>28</td>
 <td>24</td>
 </tr>
 <tr>
@@ -699,11 +680,8 @@
 </a>
 <a href="javascript:void(0);">Earphones</a>
 </td>
-<td>PT009</td>
-<td>Computers</td>
-<td>N/D</td>
-<td>15.00</td>
-<td>2</td>
+<td>500.00</td>
+<td>20</td>
 <td>11</td>
 </tr>
 <tr>
@@ -719,71 +697,8 @@
 </a>
 <a href="javascript:void(0);">Banana</a>
 </td>
-<td>PT010</td>
-<td>Health Care	</td>
-<td>N/D</td>
-<td>5.00</td>
-<td>5</td>
-<td>16</td>
-</tr>
-<tr>
-<td>
-<label class="checkboxs">
-<input type="checkbox">
-<span class="checkmarks"></span>
-</label>
-</td>
-<td class="productimgname">
-<a class="product-img">
-<img src="assets/img/product/product6.jpg" alt="product">
-</a>
-<a href="javascript:void(0);">Unpaired gray</a>
-</td>
-<td>PT006</td>
-<td>Shoes</td>
-<td>Adidas</td>
-<td>100.00</td>
-<td>1</td>
-<td>50</td>
-</tr>
-<tr>
-<td>
-<label class="checkboxs">
-<input type="checkbox">
-<span class="checkmarks"></span>
-</label>
-</td>
-<td class="productimgname">
-<a class="product-img">
-<img src="assets/img/product/product7.jpg" alt="product">
-</a>
-<a href="javascript:void(0);">Avocat</a>
-</td>
-<td>PT007</td>
-<td>Fruits</td>
-<td>N/D</td>
-<td>5.00</td>
-<td>2</td>
-<td>29</td>
-</tr>
-<tr>
-<td>
-<label class="checkboxs">
-<input type="checkbox">
-<span class="checkmarks"></span>
-</label>
-</td>
-<td class="productimgname">
-<a class="product-img">
-<img src="assets/img/product/product8.jpg" alt="product">
-</a>
-<a href="javascript:void(0);">Banana</a>
-</td>
-<td>PT008</td>
-<td>Fruits</td>
-<td>N/D</td>
-<td>10.00</td>
-<td>2</td>
+<td>900.00	</td>
+<td>28</td>
 <td>24</td>
 </tr>
 <tr>
@@ -799,32 +714,9 @@
 </a>
 <a href="javascript:void(0);">Earphones</a>
 </td>
-<td>PT009</td>
-<td>Computers</td>
-<td>N/D</td>
-<td>15.00</td>
-<td>2</td>
+<td>500.00</td>
+<td>20</td>
 <td>11</td>
-</tr>
-<tr>
-<td>
-<label class="checkboxs">
-<input type="checkbox">
-<span class="checkmarks"></span>
-</label>
-</td>
-<td class="productimgname">
-<a class="product-img">
-<img src="assets/img/product/product8.jpg" alt="product">
-</a>
-<a href="javascript:void(0);">Banana</a>
-</td>
-<td>PT010</td>
-<td>Health Care	</td>
-<td>N/D</td>
-<td>5.00</td>
-<td>4</td>
-<td>16</td>
 </tr>
 </tbody>
 </table>
@@ -834,8 +726,39 @@
 
 </div>
 </div>
-</div>
 
+<div class="searchpart">
+<div class="searchcontent">
+<div class="searchhead">
+<h3>Search </h3>
+<a id="closesearch"><i class="fa fa-times-circle" aria-hidden="true"></i></a>
+</div>
+<div class="searchcontents">
+<div class="searchparts">
+<input type="text" placeholder="search here">
+<a class="btn btn-searchs">Search</a>
+</div>
+<div class="recentsearch">
+<h2>Recent Search</h2>
+<ul>
+<li>
+<h6><i class="fa fa-search me-2"></i> Settings</h6>
+</li>
+<li>
+<h6><i class="fa fa-search me-2"></i> Report</h6>
+</li>
+<li>
+<h6><i class="fa fa-search me-2"></i> Invoice</h6>
+</li>
+<li>
+<h6><i class="fa fa-search me-2"></i> Sales</h6>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 <script src="assets/js/jquery-3.6.0.min.js"></script>
 
